@@ -1,4 +1,4 @@
-# strip-bom-buf [![Build Status](https://travis-ci.org/sindresorhus/strip-bom-buf.svg?branch=master)](https://travis-ci.org/sindresorhus/strip-bom-buf)
+# strip-bom-buf
 
 > Strip UTF-8 [byte order mark](http://en.wikipedia.org/wiki/Byte_order_mark#UTF-8) (BOM) from a buffer
 
