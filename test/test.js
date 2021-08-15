@@ -1,10 +1,14 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import {Buffer} from 'node:buffer';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
 import test from 'ava';
-import stripBomBuffer from '..';
+import stripBomBuffer from '../index.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 test('strips BOM from UTF-8 buffer', t => {
-	const fixture = fs.readFileSync(path.join(__dirname, '/fixture-utf8'));
+	const fixture = fs.readFileSync(path.join(__dirname, 'fixture-utf8'));
 	t.true(stripBomBuffer(fixture).equals(Buffer.from('Unicorn\n')));
 });
 

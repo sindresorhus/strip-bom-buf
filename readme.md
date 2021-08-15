@@ -6,31 +6,23 @@ From Wikipedia:
 
 > The Unicode Standard permits the BOM in UTF-8, but does not require nor recommend its use. Byte order has no meaning in UTF-8.
 
-
 ## Install
 
 ```
 $ npm install strip-bom-buf
 ```
 
-
 ## Usage
 
 ```js
-const fs = require('fs');
-const stripBomBuffer = require('strip-bom-buf');
+import fs from 'node:fs';
+import stripBomBuffer from 'strip-bom-buf';
 
 stripBomBuffer(fs.readFileSync('unicorn.txt'));
 //=> 'unicorn'
 ```
 
-
 ## Related
 
 - [strip-bom](https://github.com/sindresorhus/strip-bom) - String version of this module
 - [strip-bom-stream](https://github.com/sindresorhus/strip-bom-stream) - Stream version of this module
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)

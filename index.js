@@ -1,9 +1,9 @@
-'use strict';
-const isUtf8 = require('is-utf8');
+import {Buffer} from 'node:buffer';
+import isUtf8 from 'is-utf8';
 
-module.exports = buffer => {
+export default function strimBomBuffer(buffer) {
 	if (!Buffer.isBuffer(buffer)) {
-		throw new TypeError(`Expected a Buffer, got ${typeof buffer}`);
+		throw new TypeError(`Expected a \`Buffer\`, got \`${typeof buffer}\``);
 	}
 
 	if (buffer[0] === 0xEF && buffer[1] === 0xBB && buffer[2] === 0xBF && isUtf8(buffer)) {
@@ -11,4 +11,4 @@ module.exports = buffer => {
 	}
 
 	return buffer;
-};
+}
