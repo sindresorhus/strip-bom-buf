@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import Buffer from 'node:buffer';
+import {Buffer} from 'node:buffer';
 import {expectType} from 'tsd';
 import stripBomBuffer from './index.js';
 
