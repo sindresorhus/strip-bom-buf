@@ -1,14 +1,12 @@
-import {Buffer} from 'node:buffer';
 import isUtf8 from 'is-utf8';
+import {assertUint8Array} from 'uint8array-extras';
 
-export default function strimBomBuffer(buffer) {
-	if (!Buffer.isBuffer(buffer)) {
-		throw new TypeError(`Expected a \`Buffer\`, got \`${typeof buffer}\``);
+export default function stripBomBuffer(byteArray) {
+	assertUint8Array(byteArray);
+
+	if (byteArray[0] === 0xEF && byteArray[1] === 0xBB && byteArray[2] === 0xBF && isUtf8(byteArray)) {
+		return byteArray.slice(3);
 	}
 
-	if (buffer[0] === 0xEF && buffer[1] === 0xBB && buffer[2] === 0xBF && isUtf8(buffer)) {
-		return buffer.slice(3);
-	}
-
-	return buffer;
+	return byteArray;
 }

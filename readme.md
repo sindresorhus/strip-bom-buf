@@ -1,6 +1,6 @@
 # strip-bom-buf
 
-> Strip UTF-8 [byte order mark](http://en.wikipedia.org/wiki/Byte_order_mark#UTF-8) (BOM) from a buffer
+> Strip UTF-8 [byte order mark](http://en.wikipedia.org/wiki/Byte_order_mark#UTF-8) (BOM) from a `Uint8Array`
 
 From Wikipedia:
 
@@ -8,8 +8,8 @@ From Wikipedia:
 
 ## Install
 
-```
-$ npm install strip-bom-buf
+```sh
+npm install strip-bom-buf
 ```
 
 ## Usage

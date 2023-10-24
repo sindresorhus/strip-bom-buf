@@ -1,7 +1,5 @@
-import {Buffer} from 'node:buffer';
-
 /**
-Strip UTF-8 [byte order mark](http://en.wikipedia.org/wiki/Byte_order_mark#UTF-8) (BOM) from a buffer.
+Strip UTF-8 [byte order mark](http://en.wikipedia.org/wiki/Byte_order_mark#UTF-8) (BOM) from a `Uint8Array`.
 
 @example
 ```
@@ -12,4 +10,4 @@ stripBomBuffer(fs.readFileSync('unicorn.txt'));
 //=> 'unicorn'
 ```
 */
-export default function stripBomBuffer(buffer: Buffer): Buffer;
+export default function stripBomBuffer(byteArray: Uint8Array): Uint8Array;

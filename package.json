@@ -1,7 +1,7 @@
 {
 	"name": "strip-bom-buf",
 	"version": "3.0.1",
-	"description": "Strip UTF-8 byte order mark (BOM) from a buffer",
+	"description": "Strip UTF-8 byte order mark (BOM) from a Uint8Array",
 	"license": "MIT",
 	"repository": "sindresorhus/strip-bom-buf",
 	"funding": "https://github.com/sponsors/sindresorhus",
@@ -11,10 +11,14 @@
 		"url": "https://sindresorhus.com"
 	},
 	"type": "module",
-	"exports": "./index.js",
-	"engines": {
-		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js"
 	},
+	"engines": {
+		"node": ">=18"
+	},
+	"sideEffects": false,
 	"scripts": {
 		"test": "xo && ava && tsd"
 	},
@@ -35,15 +39,17 @@
 		"delete",
 		"trim",
 		"text",
-		"buffer"
+		"buffer",
+		"uint8array"
 	],
 	"dependencies": {
-		"is-utf8": "^0.2.1"
+		"is-utf8": "^0.2.1",
+		"uint8array-extras": "^0.3.0"
 	},
 	"devDependencies": {
-		"@types/node": "^16.6.1",
-		"ava": "^3.15.0",
-		"tsd": "^0.17.0",
-		"xo": "^0.44.0"
+		"@types/node": "^20.8.8",
+		"ava": "^5.3.1",
+		"tsd": "^0.29.0",
+		"xo": "^0.56.0"
 	}
 }
