@@ -1,6 +1,6 @@
 {
 	"name": "strip-bom-buf",
-	"version": "3.0.1",
+	"version": "4.0.0",
 	"description": "Strip UTF-8 byte order mark (BOM) from a Uint8Array",
 	"license": "MIT",
 	"repository": "sindresorhus/strip-bom-buf",
